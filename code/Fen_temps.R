@@ -1,7 +1,7 @@
 # script to read in and plot temperature data from fen microclimate work.
 # Chris Hamm
 
-# Originally written in ~2010 and 2011. This code is ineligent and I would not write it this way today, but I have copied it verbatim with only path changes made. ~Line 385 contains the code to recreate figure 3,
+# Originally written in ~2010 and 2011. This code is ineligent and I would not write it this way today, but I have copied it verbatim with only path changes made. ~Line 460 contains the code to recreate figure 3,
 
 
 #Some of the data are actually in F, not C, so I will have a correction in some of the data.
@@ -121,6 +121,8 @@ lines(P5T1$TMP, type='l', col='red')
 
 #Different plots
 par(mfrow = c(4, 1))
+
+# These "Lib" files refer to other temperature logger files. I believe that I changed the names because `Lib1` made little sense while P1B1 could be more reasonable interpreted as `Pole 1 Bottom 1` and allow for more intuative comparisons just by looking at the names.
 
 plot(Lib4$TMP, ylab="Degrees C", xlab='Hours', main='Pole B', type='l', col='red')
 lines(Lib3$TMP, col='blue')
@@ -280,36 +282,38 @@ confint(m) #Not all coefficients are significant (do they overlap with 0?)ma1 lo
 
 #Plots
 par(mfrow = c(3, 1))
-plot(P1B2$TMP, ylab="Degrees C", xlab='13 March - 7 May, 2011', main='Fen Temperature', type='l', col='blue', ylim=c(-10, 35))
-lines(P1T2$TMP, col='red')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+plot(P1B2$TMP, ylab = "Degrees C", xlab = '13 March - 7 May, 2011', main='Fen Temperature', type = 'l', col = 'blue', ylim = c(-10, 35))
+lines(P1T2$TMP, col = 'red')
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
-plot(P1B2$TEMP, ylab="Degrees C", xlab='13 March - 7 May, 2011', main='Fen Temperature', type='l', col='blue', ylim=c(-10,35))
-lines(P2T2$TMP, col='red')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+plot(P1B2$TEMP, ylab = "Degrees C", xlab = '13 March - 7 May, 2011', main = 'Fen Temperature', type = 'l', col = 'blue', ylim = c(-10, 35))
+lines(P2T2$TMP, col = 'red')
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
-plot(P5B2$TEMP, ylab="Degrees C", xlab='13 March - 7 May, 2011', main='Upland Temperature', type='l', col='blue')
-lines(P5T2$TMP, col='red')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+plot(P5B2$TEMP, ylab = "Degrees C", xlab = '13 March - 7 May, 2011', main = 'Upland Temperature', type = 'l', col = 'blue')
+lines(P5T2$TMP, col = 'red')
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
 
+#####
+####Plots
+#####
 
-#Plottings
-plot(P1B3$TMP, ylab='Degrees C', xlab='7 May - 16 July, 2011',main='Fen Temperature', type='l', col='blue')
-lines(P1T3$TMP, col='red')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+plot(P1B3$TMP, ylab = 'Degrees C', xlab = '7 May - 16 July, 2011',main = 'Fen Temperature', type = 'l', col = 'blue')
+lines(P1T3$TMP, col = 'red')
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
-plot(P2B3$TMP, ylab='Degrees C', xlab='7 May - 16 July, 2011', type='l', col='blue', main='Fen Temperature', ylim=c(0, 38))
+plot(P2B3$TMP, ylab = 'Degrees C', xlab = '7 May - 16 July, 2011', type = 'l', col = 'blue', main = 'Fen Temperature', ylim = c(0, 38))
 lines(P2T3$TMP, col='red')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
-plot(P4B3$TMP, ylab='Degrees C', xlab='7 May - 16 July, 2011', type='l', col='blue', main='Upland Temperature')
-lines(P4T3$TMP, col='red')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+plot(P4B3$TMP, ylab = 'Degrees C', xlab = '7 May - 16 July, 2011', type = 'l', col = 'blue', main = 'Upland Temperature')
+lines(P4T3$TMP, col = 'red')
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
-plot(P5B3$TMP, ylab='Degrees C', xlab='7 May - 16 July, 2011', type='l', col='blue', main='Upland Temperature')
-lines(P5T3$TMP, col='red', type='l')
-legend('topleft', legend=c('Ground Level', '1m Height'), col=c('blue', 'red'), lty=c(1,1))
+plot(P5B3$TMP, ylab = 'Degrees C', xlab = '7 May - 16 July, 2011', type = 'l', col = 'blue', main = 'Upland Temperature')
+lines(P5T3$TMP, col = 'red', type = 'l')
+legend('topleft', legend = c('Ground Level', '1m Height'), col = c('blue', 'red'), lty = c(1, 1))
 
 #Showing extremes in fen microclimate
 
@@ -343,7 +347,7 @@ str(mawn3)
 
 
 #File for talk Fen temps pole 2
-jpeg(file='Fen_Temp.jpg')
+#jpeg(file='Fen_Temp.jpg')
 par(mfrow = c(3, 1))
 plot(P2B1$TMP, ylab="Degrees C", xlab='3 January - 13 March, 2011', type='l', lty=1, ylim=c(-25, 15), col='blue', xaxt='n', lwd=2)
 lines(P2T1$TMP, type='l', lty=2, col='red', lwd=2)
@@ -362,12 +366,12 @@ lines(P2T3$TMP, col='red', lwd=2, lty=2)
 abline(h=10, lwd=2, lty=5)
 lines(mawn3$TMP, lwd=2, lty=4)
 
-dev.off()
+#dev.off()
 #The MNFI DD model is chronically underestimating the DD50 for the MSB, we need better models and we need data from the sites!
 
 
 #Upland temps, Pole 5
-jpeg(file='Fen_Temp_P5.jpg')
+#jpeg(file='Fen_Temp_P5.jpg')
 par(mfrow = c(3, 1))
 plot(P5B1$TMP, ylab="Degrees C", xlab='3 January  - 13 March, 2011', type='l', col='blue', lwd=2)
 lines(P5T1$TMP, type='l', col='red')
@@ -381,13 +385,10 @@ lines(P5T3$TMP, col='red', type='l')
 abline(v=1300, lwd=2, lty=5)
 text(x=1430, y=5, 'MSB Emergence')
 
-dev.off()
+#dev.off()
 
 
 
-#####
-##### Figure 3
-#####
 #Fen temp for pub
 par(mfrow = c(3, 1))
 plot(P2B1$TMP, ylab="Degrees C", xlab='3 January - 13 March, 2011', type='l', lty=2, ylim=c(-25, 15), col='black', xaxt='n', lwd=2)
@@ -455,45 +456,53 @@ plot(P2B3$TMP, ylab='Degrees C', xlab='7 May - 16 July, 2011', type='l', lty=2, 
 lines(P2T3$TMP, col='red', lwd=2, lty=4)
 dev.off()
 
+
+
+#####
+##### Figure 3 - color
+#####
 #for publication in JLepSoc
 quartz(width=8, height=8)
 #pdf(file='Temp_fig_diss.pdf', bg='white')
 
+par(mar = c(1, 5, 0, 0))
 
-par(mar=c(1,5,0,0))
-
-par(fig=c(0,1,0.65,1), new=T)
-par(mar=c(3,6,1,1))
+par(fig = c(0,1,0.65,1), new = TRUE)
+par(mar = c(3, 6, 1, 1))
 plot.new()
-plot(P2B1$TMP, ylab='', xlab='', type='l', lty=2, ylim=c(-25, 15), col='black', xaxt='n', lwd=3, las=1, bty='l', cex.axis=1.5)
-mtext('3 January - 13 March, 2011', side=1, line=0.5, adj=0.5, cex=1.5)
-lines(P2T1$TMP, type='l', lty=4, col='red', lwd=2)
-legend(x=0, y=19, legend=c('1m Height', 'Ground Level'), col=c('red', 'black'), lty=c(4,2), lwd=c(3,2), bty='n')
+plot(P2B1$TMP, ylab = '', xlab = '', type = 'l', lty = 2, ylim = c(-25, 15), col = 'black', xaxt = 'n', lwd = 3, las = 1, bty = 'l', cex.axis = 1.5)
+mtext('3 January - 13 March, 2011', side = 1, line = 0.5, adj = 0.5, cex = 1.5)
+lines(P2T1$TMP, type = 'l', lty = 4, col = 'red', lwd = 2)
+legend(x = 0, y = 19, legend = c('1m Height', 'Ground Level'), col = c('red', 'black'), lty = c(4, 2), lwd = c(3, 2), bty = 'n')
 
-par(fig=c(0,1,0.35, 0.70), new=T)
-par(mar=c(3,6,1,1))
+par(fig = c(0,1, 0.35, 0.70), new = TRUE)
+par(mar = c(3, 6, 1, 1))
 plot.new()
-plot(P2B2$TMP, ylab=(expression(paste('Temperature (', degree, 'C)'))), xlab='', type='l', lty=2, lwd=3, col='black', ylim=c(-10,35), xaxt='n', bty='l', las=1, cex.axis=1.5, cex.lab=1.5)
-lines(P2T2$TMP, col='red', lwd=2, lty=4)
-mtext('13 March - 7 May, 2011', side=1, line=0.5, adj=0.5, cex=1.5)
+plot(P2B2$TMP, ylab = (expression(paste('Temperature ', degree, 'C)'))), xlab = '', type = 'l', lty = 2, lwd = 3, col = 'black', ylim = c(-10, 35), xaxt = 'n', bty = 'l', las = 1, cex.axis = 1.5, cex.lab = 1.5)
+lines(P2T2$TMP, col = 'red', lwd = 2, lty = 4)
+mtext('13 March - 7 May, 2011', side = 1, line = 0.5, adj = 0.5, cex = 1.5)
 
-par(fig=c(0,1,0,0.35), new=T)
-par(mar=c(3,6,1,1))
+par(fig = c(0, 1, 0, 0.35), new = TRUE)
+par(mar = c(3, 6, 1, 1))
 plot.new()
-plot(P2B3$TMP, ylab='', xlab='', type='l', lty=2, col='black', ylim=c(0, 38), xaxt='n', lwd=3, las=1, bty='l', cex.axis=1.5)
-lines(P2T3$TMP, col='red', lwd=2, lty=4)
-mtext('7 May - 16 July, 2011', side=1, line=0.5, adj=0.5, cex=1.5)
+plot(P2B3$TMP, ylab = '', xlab = '', type = 'l', lty = 2, col = 'black', ylim = c(0, 38), xaxt = 'n', lwd = 3, las = 1, bty = 'l', cex.axis = 1.5)
+lines(P2T3$TMP, col = 'red', lwd = 2, lty = 4)
+mtext('7 May - 16 July, 2011', side = 1, line = 0.5, adj = 0.5, cex = 1.5)
 #mtext((expression(paste('Temperature (', degree, 'C)'))), side=2, cex=1.5, adj=54, line=3 )
 #dev.off()
 
-(expression(paste('Temperature (', degree, 'C)')))
+#(expression(paste('Temperature ', degree, 'C)')))
 
 
+
+#####
+##### Figure 3 - B&W
+#####
 
 #black and white for NH paper J Lep Soc
 #quartz(width=2200, height=2200, units='px')
 #pdf(file='Temp_fig_diss.pdf', bg='white')
-tiff(file='Hamm_Fig3.tiff', width=2200, height=2200, units='px', res=350, bg='white')
+#tiff(file='Hamm_Fig3.tiff', width=2200, height=2200, units='px', res=350, bg='white')
 par(mar=c(1,5,0,0))
 
 par(fig=c(0,1,0.65,1), new=T)
@@ -518,7 +527,7 @@ plot(P2T3$TMP, , ylab='', xlab='', type='l', lty=1, col='dark grey', ylim=c(0, 3
 lines(P2B3$TMP, col='black', lwd=2, lty=2)
 mtext('7 May - 16 July, 2011', side=1, line=0.5, adj=0.5, cex=1.5)
 #mtext((expression(paste('Temperature (', degree, 'C)'))), side=2, cex=1.5, adj=54, line=3 )
-dev.off()
+#dev.off()
 
 
 
