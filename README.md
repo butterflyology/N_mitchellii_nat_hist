@@ -21,3 +21,8 @@ Important files:
   - Pretty pictures
 
 **README.md** - this very file.
+
+
+List of commits:
+
+- 2019-08-14: Initial commit to the repo.
